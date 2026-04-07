@@ -1,0 +1,46 @@
+---
+layout: Layout
+---
+
+<section class="about-section">
+  <div class="intro">
+    <h2>Welcome to Our Elderly Home!</h2>
+    <button class="expand-button">Read More</button>
+    <div class="expanded-content" style="display: none;">
+      <p>Our elderly home provides a safe and nurturing environment for your loved ones. 
+      We offer personalized care plans, recreational activities, and a community that feels like family.</p>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <h3>Basic Fees</h3>
+    <ul>
+      <li>Monthly Fee: $3000</li>
+      <li>One-time Admission Fee: $500</li>
+    </ul>
+
+    <h3>Contact Details</h3>
+    <p>Email: contact@elderlyhome.com</p>
+    <p>Phone: (123) 456-7890</p>
+  </div>
+
+  <div class="image">
+    <img src="/images/elderly-home.jpg" alt="Elderly Home" />
+  </div>
+</section>
+
+<style>
+.about-section { padding: 20px; }
+.intro { margin-bottom: 20px; }
+.expand-button { cursor: pointer; }
+.expanded-content { margin-top: 10px; }
+.info-box { margin-bottom: 20px; }
+.image img { width: 100%; height: auto; }
+</style>
+
+<script>
+  document.querySelector('.expand-button').addEventListener('click', function() {
+    const expandedContent = document.querySelector('.expanded-content');
+    expandedContent.style.display = expandedContent.style.display === 'none' ? 'block' : 'none';
+  });
+</script>
