@@ -1,0 +1,48 @@
+---
+layout:..
+---
+
+<script>
+    import { useEffect } from 'react';
+    import Lightbox from 'react-lightbox-component';
+
+    const images = [
+        'https://via.placeholder.com/400x300?text=Image+1',
+        'https://via.placeholder.com/400x300?text=Image+2',
+        'https://via.placeholder.com/400x300?text=Image+3',
+        'https://via.placeholder.com/400x300?text=Image+4',
+        'https://via.placeholder.com/400x300?text=Image+5',
+        'https://via.placeholder.com/400x300?text=Image+6',
+        'https://via.placeholder.com/400x300?text=Image+7',
+        'https://via.placeholder.com/400x300?text=Image+8',
+        'https://via.placeholder.com/400x300?text=Image+9',
+        'https://via.placeholder.com/400x300?text=Image+10',
+        'https://via.placeholder.com/400x300?text=Image+11',
+        'https://via.placeholder.com/400x300?text=Image+12'
+    ];
+    
+    let openLightbox = null;
+    
+    useEffect(() => {
+        openLightbox = Lightbox.open;
+    }, []);
+</script>
+
+<style>
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .gallery img {
+        cursor: pointer;
+        width: 100%;
+        max-width: 200px;
+    }
+</style>
+
+<div class="gallery">
+    {images.map(image => (
+        <img src={image} onClick={() => openLightbox(image)} alt="Gallery Image" />
+    ))}
+</div>
