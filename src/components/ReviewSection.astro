@@ -1,0 +1,35 @@
+---
+import { onMount } from 'astro:client';
+---
+<style>
+  .review-section {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  .review-image {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  .review-image:hover {
+    transform: scale(1.05);
+  }
+</style>
+
+<div class="review-section">
+  <img class="review-image" src="/path/to/image1.jpg" alt="Family Review 1" on:click={() => openLightbox('/path/to/image1.jpg')} />
+  <img class="review-image" src="/path/to/image2.jpg" alt="Family Review 2" on:click={() => openLightbox('/path/to/image2.jpg')} />
+  <img class="review-image" src="/path/to/image3.jpg" alt="Family Review 3" on:click={() => openLightbox('/path/to/image3.jpg')} />
+  <img class="review-image" src="/path/to/image4.jpg" alt="Family Review 4" on:click={() => openLightbox('/path/to/image4.jpg')} />
+  <img class="review-image" src="/path/to/image5.jpg" alt="Family Review 5" on:click={() => openLightbox('/path/to/image5.jpg')} />
+</div>
+
+<script>
+  function openLightbox(imageSrc) {
+    // Implement lightbox functionality here
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `<img src="${imageSrc}" onclick="this.parentElement.remove()" style="width:100%; height:auto;">`;
+    document.body.appendChild(lightbox);
+  }
+</script>
